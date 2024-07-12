@@ -3,7 +3,13 @@ name: Test Actions
 
 on:
   workflow_dispatch:
+
+env: 
+  api_key: ${{ secrets.API_KEY }}
+  api_secret: ${{ secrets.API_SECRET }}
+  proxy_url: ${{ secrets.PROXY_URL }}
   
+
 jobs:
   test_server_ip:     
     runs-on: ubuntu-latest
