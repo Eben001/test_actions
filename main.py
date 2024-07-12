@@ -1,7 +1,5 @@
 import requests
-from requests.auth import HTTPProxyAuth
 from pybit.unified_trading import HTTP
-from google.colab import userdata
 import os
 
 
