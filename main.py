@@ -13,10 +13,10 @@ else:
   print('Error occurred:', response.status_code)
 
 
-PROXY = os.environ['proxy']
+PROXY_URL = os.environ['proxy_url']
 
-os.environ['HTTP_PROXY'] = PROXY
-os.environ['HTTPS_PROXY'] = PROXY
+os.environ['HTTP_PROXY'] = PROXY_URL
+os.environ['HTTPS_PROXY'] = PROXY_URL
 
 
 API_KEY = os.environ['api_key']
