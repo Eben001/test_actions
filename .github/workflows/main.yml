@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   
 jobs:
-  scrape_headlines:     
+  test_server_ip:     
     runs-on: ubuntu-latest
 
     steps:
