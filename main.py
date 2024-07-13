@@ -55,7 +55,7 @@ chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
 driver = webdriver.Chrome(options=chrome_options,service=ChromeService(ChromeDriverManager().install()))
 
-handle = 'burrenfarmexperience'
+handle = 'virtuosoltd'
 url = f'https://www.instagram.com/{handle}'
 driver.get(url)
 try:
@@ -75,7 +75,7 @@ except:
 try:
     category = soup.find('div', class_='_ap3a _aaco _aacu _aacy _aad6 _aade').text.strip()
 except: 
-    category = ''
+    category = 'cound't find the category'
   
 
 
