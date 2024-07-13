@@ -75,7 +75,7 @@ except:
 try:
     category = soup.find('div', class_='_ap3a _aaco _aacu _aacy _aad6 _aade').text.strip()
 except: 
-    category = 'cound't find the category'
+    category = "cound't find the category"
   
 
 
