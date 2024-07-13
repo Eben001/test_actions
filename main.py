@@ -77,7 +77,7 @@ handle = 'burrenfarmexperience'
 url = f'https://www.instagram.com/{handle}'
 driver.get(url)
 try:
-    WebDriverWait(driver, 20).until(
+    WebDriverWait(driver, 30).until(
         EC.presence_of_element_located((By.XPATH, '//h2[@class="x1lliihq x1plvlek xryxfnj x1n2onr6 x193iq5w xeuugli x1fj9vlw x13faqbe x1vvkbs x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x x1i0vuye x1ms8i2q xo1l8bm x5n08af x10wh9bi x1wdrske x8viiok x18hxmgj"]'))
     )
 except:
@@ -230,9 +230,8 @@ except Exception:
     except Exception:
         last_post_date = ''
 
-print(handle)
+print(account_handle)
 print( {
-"Handle": handle,
 "Account Handle": account_handle,
 "Account Name": account_name,
 "Category": category,
