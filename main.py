@@ -39,15 +39,34 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import time
+
+
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
 driver = webdriver.Chrome(options=chrome_options,service=ChromeService(ChromeDriverManager().install()))
-driver.get('https://www.google.com')
-time.sleep(3)
-print(driver.title)
-driver.quit()
 
+handle = 'abibu573'
+url = f'https://www.instagram.com/{handle}'
+driver.get(url)
+try:
+  WebDriverWait(driver, 15).until(
+      EC.presence_of_element_located((By.XPATH, '//h2[@class="x1lliihq x1plvlek xryxfnj x1n2onr6 x193iq5w xeuugli x1fj9vlw x13faqbe x1vvkbs x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x x1i0vuye x1ms8i2q xo1l8bm x5n08af x10wh9bi x1wdrske x8viiok x18hxmgj"]'))
+  )
+except:
+  pass
+finally:
+  soup =  BeautifulSoup(driver.page_source, 'lxml')
 
+try:
+  account_handle = soup.find('h2', class_='x1lliihq x1plvlek xryxfnj x1n2onr6 x193iq5w xeuugli x1fj9vlw x13faqbe x1vvkbs x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x x1i0vuye x1ms8i2q xo1l8bm x5n08af x10wh9bi x1wdrske x8viiok x18hxmgj').text.strip()
+except: 
+  account_handle = 'Unable to get account handle'
+
+ print(handle)
 
 
